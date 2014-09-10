@@ -1,0 +1,13 @@
+{
+  "name": "xway-mikrotik",
+  "version": "0.0.1",
+  "author": "Andreas Jaggi <andreas+puppet-mikrotik@jaggi.info>",
+  "license": "Apache 2.0",
+  "source": "https://github.com/x-way/puppet-mikrotik",
+  "project_page": "https://github.com/x-way/puppet-mikrotik",
+  "issues_url": "https://github.com/x-way/puppet-mikrotik/issues",
+  "tags": ["mikrotik","routeros","networkdevice","device","networking"],
+  "description": "Mikrotik Networkdevice Module",
+  "summary": "Network device extensions for Mikrotik",
+  "dependencies": []
+}
