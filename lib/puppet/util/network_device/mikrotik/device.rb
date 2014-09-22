@@ -60,7 +60,7 @@ class Puppet::Util::NetworkDevice::Mikrotik::Device < Puppet::Util::NetworkDevic
     end
     lines.each do |l|
       case l
-      when /^\s*(\d+)\s([X\s])\slist=(\S+)\saddress=([^ ]+)\s*$/
+      when /^\s*(\d+)\s([X\s])\slist=(\S+)\saddress=([^ ]+)(\/128)?\s*$/
         name = $3
         lists[name] = {:listname => name} unless lists[name]
         lists[name]['pos'] = {} unless lists[name]['pos']
@@ -69,7 +69,7 @@ class Puppet::Util::NetworkDevice::Mikrotik::Device < Puppet::Util::NetworkDevic
         lists[name][:disabled] = (lists[name][:disabled] and (newdis != lists[name][:disabled])) ? 'maybe' : newdis
         (lists[name][:address] ||= []) << $4
         lists[name][:address].sort!
-      when /^\s*(\d+)\s([X\s])\scomment=(.*)\slist=(\S+)\saddress=([^ ]+)\s*$/
+      when /^\s*(\d+)\s([X\s])\scomment=(.*)\slist=(\S+)\saddress=([^ ]+)(\/128)?\s*$/
         name = $4
         lists[name] = {:listname => name} unless lists[name]
         lists[name]['pos'] = {} unless lists[name]['pos']
